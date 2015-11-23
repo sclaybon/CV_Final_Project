@@ -79,6 +79,7 @@
             <!-- TEXT BASED LOGO -->
             <a class="navbar-brand" href="#">CV<span>FinalProject</span></a>
             
+            
             <!-- IMG BASED LOGO  -->
             <!--  <a class="navbar-brand" href="#"><img src="img/logo.png" alt="logo"></a> --> 
             
@@ -87,12 +88,13 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#abstract">Abstract</a></li>
-              <li><a href="#approach1">C Elegans Approach(1)</a></li>
-              <li><a href="#approach2">U2OS Approach(2)</a></li>
-              <li><a href="#approach3">Experiments and Results</a></li>
+              <li><a href="#abstract">Abstract/Intro</a></li>
+              <li><a href="#approach1">C Elegans Detector [Approach1]</a></li>
+              <li><a href="#approach2">Human U2OS Detector [Approach1]</a></li>
+              <li><a href="#generic">Generic Detector [Approach2]</a></li>
+              <li><a href="#approach3">Results</a></li>
               <li><a href="#conclusion">Conclusions</a></li> 
-              <li><a href="#conclusion">Qualitative Results</a></li> 
+              <li><a href="#qualitative">Qualitative Results</a></li> 
               <li><a href="#team">Team</a></li>                           
             </ul>           
           </div><!--/.nav-collapse -->
@@ -185,8 +187,8 @@
               <!-- START ABOUT HEADING -->
               <div class="heading">
 				<BR>&nbsp;<BR>
-                <h2 class="wow fadeInLeftBig">Analysis of U2OS and C-Elegans</h2>
-                <h4> Abstract: <a href="Bala_Claybon_Stuckner_Proposal.pdf"> (Click to View Original Proposal)</a></h4>  </h2><p> Identifying and counting cells in images is the first stage of cell analysis, but this step can become extraordinarily time consuming if done manually as the number of cells and organisms increase. Our goal was to take a micro graph, a magnified image containing cells taken through a microscope lens, and return information about cell type and number. For this we implemented two models. In our first model we trained a high level image classifier followed by class specific detection algorithms and finally evaluated the metrics. Our second approach involves a generic cell detector, followed by classification. We have compared the performance of both these models in terms of precision, recall and mean RMS cell-count error. We used two data-sets: C.elegans and Human Bone Osteosarcoma Epithelial Cells (U2OS Line), that provide ground truth segmentation of cells. </p>
+                <h2 class="wow fadeInLeftBig">Abstract</h2>
+                <h4> <b>Analysis of C. Elegans and Human U2OS</b> <a href="Bala_Claybon_Stuckner_Proposal.pdf"> (Click to View Original Proposal)</a></h4>  </h2><p> Identifying and counting cells in images is the first stage of cell analysis, but this step can become extraordinarily time consuming if done manually as the number of cells and organisms increase. Our goal was to take a micro graph, a magnified image containing cells taken through a microscope lens, and return information about cell type and number. For this we implemented two models. In our first model we trained a high level image classifier followed by class specific detection algorithms and finally evaluated the metrics. Our second approach involves a generic cell detector, followed by classification. We have compared the performance of both these models in terms of precision, recall and mean RMS cell-count error. We used two data-sets: C.elegans and Human Bone Osteosarcoma Epithelial Cells (U2OS Line), that provide ground truth segmentation of cells. </p>
 			</div>
 
               <!-- START ABOUT CONTENT -->
@@ -248,6 +250,60 @@
           </div>
         </div>       
       </div>
+      <!-- START Intro Area -->
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <div class="about_area">
+              <!-- START ABOUT HEADING -->
+              <div class="heading">
+				<BR>&nbsp;<BR>
+                <h2 class="wow fadeInLeftBig">Introduction</h2>
+              </div>
+                 <div id="collapseOne" class="panel-collapse collapse in">
+                   <div id="collapseOne" class="panel-collapse collapse in">
+                   
+							<div class="panel-body">
+							Analyzing microscopy images of biological cells and tissue is a time consuming and expensive task that requires expert human analysis.  There is a growing need for the development of image analysis techniques to make this process faster, more affordable, and more available.  There are two big motivations for the development of this technique: providing quick analysis of potentially infected samples in regions where experts may not be available or demand is too high, and streamlining data acquisition in research.  Testing samples for infectious cells such as tuberculosis or cancer can be time consuming and can require experts to analyze microscopic images.  An automatic image analysis of micrographs can bring disease detection and analysis to areas that do not have access to experts who can analyze the images.  This would also allow many more tests to be performed in a much quicker time and cut down on costs by not requiring time from experts.  Researchers can benefit from microscopy image analysis by cutting down the time it takes to analyze large datasets.  Image analysis can quickly return significant information about a sample or dataset such as type of cell, average size, shape, and other metrics and statistical information.  This data can be analyzed by researchers and does not require painstaking human measurements and analysis of each image which can be biased or affected by fatigue.
+                            </div>
+                            <div class="panel-body">
+                            Biological image analysis is gaining significant attention from researchers.  The Broad Bioimage Benchmark Collection (BBBC) provides microscopy image sets along with “ground truth” data to help researchers develop, test, and publish new techniques for biological image analysis.  The BBBC hopes to establish best practices and a better understanding of the best methods for this type of analysis.  FIJI is an open-source software based off of ImageJ that focuses on biological image analysis.  Computer analysis of biological microscopy images has many applications and has many advantages over human analysis.  Therefore, there is a lot of interest and collaboration in developing and sharing techniques in this area.
+                            </div>
+                            <div class="panel-body">
+                            The goal of the present project is to develop algorithms that when given a microscopy image containing biological cells, returns information about the cells including type, number, and size.  Microscopy images and ground truths were received from the BBBC to aid in the development of the techniques used in this project.  Multiple techniques are employed to identify each individual cell in the image and return its metrics.  The success of the experiment is evaluated by comparing the results with the accepted ground truths provided with the datasets.  The hope of this endeavor is to aid in the development in microscopy image techniques that will speed up and make more accurate the information and metrics acquired from biological image datasets.
+                            </div>
+                            <div class="panel-body">
+                            <b>The Cell Classifier project comprises of two approaches to solve the issue of classifying cells.</b> 
+                            </div>
+                            <div class="panel-body">
+                            <b>For our dataset we made use of two types of cells:</b> 
+                            </div>
+                            <div class="panel-body">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Roundworm C.elegans – Dead pheotype: worms appear rod-like in shape and slightly uneven in texture. Live phenotype: worms appear curved in shape and smooth in texture (Courtesy: https://www.broadinstitute.org/)
+                            </div>
+                            <div class="panel-body">
+                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Breast cancer Human U2OS epithelial cells (Courtesy: Nuclear segmentation in microscope cell images: A hand-segmented dataset and comparison of algorithms by Luis Pedro Coelho, Aabid Shariff, and Robert F. Murphy. DOI:10.1109/ISBI.2009.5193098 PubMed Central (open access).)
+                            </div>
+                            <div class="panel-body">
+                            In the first approach, the test image is passed to the trained classifier first. This classifier is an SVM that states whether the given input image is C.elegans or Human U2OS. Depending on this output, the input image is then fed to the appropriate detector. We have devised two separate dedicated detector modules for each of the cell type. The detector modules detect the cell boundaries and also give a count of the number of cells. Below is a simple block diagram to elaborate on the pipeline.
+                            </div>
+                          </div>
+                          <div><img src="img/SVM/Figure14.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure1</h4>
+                           <div>&nbsp;</div>
+                          <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+							In the second approach, the detection precedes classification. So the input image is first run through a generic detector module that detects cell boundaries. Next, the detected boxes are carried forward to two different single-class SVMs: C.elegans SVM and Human U2OS SVM. Each of these SVMs gives a simple yes/no as an output. For example, when looking at whether a given detection box is C.elegans or background, if it is background then is it Human U2OS or background? This helps to narrow down the type of boxes into 3 categories: C.elegans, Human U2OS or background. Then a cell count depending on the detected boxes is taken. Figure 15 is a block diagram to elaborate on the pipeline. For the image C.elegans classifier SVM, the training set consists of 1,139 images of C.elegans cells (ground truth crops form original image) and 4,401 combined images of Human U2OS (crops of cells) as well as random background crops from both dataset. For the image C.elegans classifier SVM, the training set consists of 1,631 images of Human U2OS cells (ground truth crops form original image) and 3,924 combined images of C.elegans (crops of cells) as well as random background crops from both dataset. Finally, the testing set: 17 images of C.elegans and 6 images of Human U2OS. Furthermore, For both the approaches, metrics like precision, accuracy, recall for classification and detection are evaluated. Also average cell count RMS error are computed.
+                            </div>
+                          </div>  
+                          <div><img src="img/SVM/Figure15.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure2</h4>
+                           <div>&nbsp;</div>
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
        <!-- BEGAIN SKILLS  -->
         <div class="row">
           <div class="col-lg-12 col-md-12">
@@ -303,8 +359,8 @@
               <!-- START APPROACH1 HEADING -->
               <BR>&nbsp;<BR> 
               <div class="heading">
-                <h2 class="wow fadeInLeftBig">C-Elegans Approach</h2>
-                <h4> <b>Introduction:</b> <a href="Bala_Claybon_Stuckner_Proposal.pdf">(Click to View Python Code)</a></h4>  </h2><p> This section details the process and challenge of C Elegans segmentation and counting as well as the path to which the final method was chosen.</p>
+                <h2 class="wow fadeInLeftBig">C-Elegans Detector [Approach1]</h2>
+                <h4> <b>Approach One:</b> <a href="Bala_Claybon_Stuckner_Proposal.pdf">(Click to View Python Code)</a></h4>  </h2><p> This section details the process and challenge of C Elegans segmentation and counting as well as the path to which the final method was chosen.</p>
               </div>
 
               <!-- START APPROACH1 CONTENT -->
@@ -416,8 +472,8 @@
               <!-- START APPROACH2 HEADING -->
               <BR>&nbsp;<BR> 
               <div class="heading">
-                <h2 class="wow fadeInLeftBig">Human U2OS Approach</h2>
-                <h4> <b>Introduction:</b> <a href="Bala_Claybon_Stuckner_Proposal.pdf">(Click to View Python Code)</a></h4>  </h2><p> This section details the process and challenge of Human U2OS segmentation and counting as well as the path to which the final method was chosen.</p>
+                <h2 class="wow fadeInLeftBig">Human U2OS Detector [Approach1]</h2>
+                <h4> <b>Approach One:</b> <a href="Bala_Claybon_Stuckner_Proposal.pdf">(Click to View Python Code)</a></h4>  </h2><p> This section details the process and challenge of Human U2OS segmentation and counting as well as the path to which the final method was chosen.</p>
               </div>
 
               <!-- START APPROACH2 CONTENT -->
@@ -489,17 +545,16 @@
       </div>
     </section>
 	<!--=========== END APPROACH2 SECTION ================-->
-	 <!--=========== BEGIN APPROACH3 SECTION ================-->
-    <section id="approach3">
+	 <!--=========== BEGIN Generic Detector SECTION ================-->
+    <section id="generic">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12">
             <div class="about_area">
-              <!-- START APPROACH3 HEADING -->
+              <!-- START APPROACH2 HEADING -->
               <BR>&nbsp;<BR> 
               <div class="heading">
-                <h2 class="wow fadeInLeftBig">The Cell Classifier (Experiments and Results)</h2>
-                <h4> <b>Introduction:</b> <a href="Bala_Claybon_Stuckner_Proposal.pdf">(Click to View Python Code)</a></h4>  </h2><p> The Cell Classifier project comprises of two approaches to solve the issue of classifying cells.</p>
+                <h2 class="wow fadeInLeftBig">Generic Detector [Approach2]</h2>
               </div>
 
               <!-- START APPROACH2 CONTENT -->
@@ -513,46 +568,66 @@
                           <div class="panel-heading">
                             <h4 class="panel-title">
                               <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                 </span> Part 3 of the Approach </span>
+                                 </span> Generic Detector [Approach2] </span>
                               </a>
                             </h4>
                           </div>
-                          
-                          <div id="collapseOne" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                            <b>For our dataset we made use of two types of cells:</b> 
-                            </div>
-                            <div class="panel-body">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Roundworm C.elegans – Dead pheotype: worms appear rod-like in shape and slightly uneven in texture. Live phenotype: worms appear curved in shape and smooth in texture (Courtesy: https://www.broadinstitute.org/)
-                            </div>
-                            <div class="panel-body">
-                            &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2. Breast cancer Human U2OS epithelial cells (Courtesy: Nuclear segmentation in microscope cell images: A hand-segmented dataset and comparison of algorithms by Luis Pedro Coelho, Aabid Shariff, and Robert F. Murphy. DOI:10.1109/ISBI.2009.5193098 PubMed Central (open access).)
-                            </div>
-                            <div class="panel-body">
-                            In the first approach, the test image is passed to the trained classifier first. This classifier is an SVM that states whether the given input image is C.elegans or Human U2OS. Depending on this output, the input image is then fed to the appropriate detector. We have devised two separate dedicated detector modules for each of the cell type. The detector modules detect the cell boundaries and also give a count of the number of cells. Below is a simple block diagram to elaborate on the pipeline.
-                            </div>
+                          <div class="panel-body">
+							<b>Detector:</b>
+							</div>
+							<div class="panel-body">
+							The detector used in this approach had to be generic for both the datasets.
+							</div>
+							<div class="panel-body">
+							It comprises of thresholding the input image using Otsu thresholding. Otsu thresholding is a clustering-based image thresholding technique. This is done to avoid any fixed threshold values. Following this, connected components is run on the binary image and labels of connected regions are extracted. Using these labels, cell crops are extracted. Next these cell crops are fed to the two SVMs: C.elegans and Human U2OS. Depending on the prediction probability returned by the SVMs, the cell crops in an image are classified as C.elegans or Human U2OS or Background. The crops classified as background are then dropped and the remaining are evaluated. 
+							</div>
+							<div class="panel-body">
+							An attempt - To detect bounding boxes, we tried implementing sliding windows approach also. That is, we extracted windows of pre-determined sizes from the test image, then based on the score/probability obtained from the SVM we dropped background crops and proceeded with C.elegans and Human U2OS crops. Once the class specific boxes were collected, we ran non-maximum suppression to drop the overlapping boxes. Then metrics were computed.
+							</div>
+							<div class="panel-body">
+							Issue faced: The sliding windows approach was computationally expensive because of the large number of required windows. So we could not go ahead with this idea and instead opted for a more basic but effective connected components approach.
+							</div>
                           </div>
-                          <div><img src="img/SVM/Figure14.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure14</h4>
-                           <div>&nbsp;</div>
-                          <div id="collapseOne" class="panel-collapse collapse in">
-                          
-                            <div class="panel-body">
-							In the second approach, the detection precedes classification. So the input image is first run through a generic detector module that detects cell boundaries. Next, the detected boxes are carried forward to two different single-class SVMs: C.elegans SVM and Human U2OS SVM. Each of these SVMs gives a simple yes/no as an output. For example, when looking at whether a given detection box is C.elegans or background, if it is background then is it Human U2OS or background? This helps to narrow down the type of boxes into 3 categories: C.elegans, Human U2OS or background. Then a cell count depending on the detected boxes is taken. Figure 15 is a block diagram to elaborate on the pipeline. For the image C.elegans classifier SVM, the training set consists of 1,139 images of C.elegans cells (ground truth crops form original image) and 4,401 combined images of Human U2OS (crops of cells) as well as random background crops from both dataset. For the image C.elegans classifier SVM, the training set consists of 1,631 images of Human U2OS cells (ground truth crops form original image) and 3,924 combined images of C.elegans (crops of cells) as well as random background crops from both dataset. Finally, the testing set: 17 images of C.elegans and 6 images of Human U2OS.                        
-                            </div>
-                           
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>       
+      </div>
+    </section>
+	<!--=========== END Generic Detector SECTION ================-->
+	 <!--=========== BEGIN APPROACH3 SECTION ================-->
+    <section id="approach3">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <div class="about_area">
+              <!-- START APPROACH3 HEADING -->
+              <BR>&nbsp;<BR> 
+              <div class="heading">
+                <h2 class="wow fadeInLeftBig">Results</h2>
+              </div>
+              <!-- START APPROACH2 CONTENT -->
+              <div class="about_content">
+                <div class="row">
+                  <div>
+                    <div class="about_featured">
+                      <div class="panel-group" id="accordion">
+                        <!-- START SINGLE FEATURED ITEM #1-->
+                        <div class="panel panel-default wow fadeInLeft">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <!--<a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                 </span> Part 3 of the Approach </span>
+                              </a>-->
+                            </h4>
                           </div>
                           
-                           
                           
-                          <div><img src="img/SVM/Figure15.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure15</h4>
-                           <div>&nbsp;</div>
-                          <div id="collapseOne" class="panel-collapse collapse in">
-                            <div class="panel-body">
-							For both the approaches, metrics like precision, accuracy, recall for classification and detection are evaluated. Also average cell count RMS error are computed.                            
-                            </div>
-                          </div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             <b>Classifier:</b>
@@ -667,23 +742,8 @@
                             <div class="panel-body">
 							<b>Approach 2:</b>
 							</div>
-							<div class="panel-body">
-							<b>Detector:</b>
-							</div>
-							<div class="panel-body">
-							The detector used in this approach had to be generic for both the datasets.
-							</div>
-							<div class="panel-body">
-							It comprises of thresholding the input image using Otsu thresholding. Otsu thresholding is a clustering-based image thresholding technique. This is done to avoid any fixed threshold values. Following this, connected components is run on the binary image and labels of connected regions are extracted. Using these labels, cell crops are extracted. Next these cell crops are fed to the two SVMs: C.elegans and Human U2OS. Depending on the prediction probability returned by the SVMs, the cell crops in an image are classified as C.elegans or Human U2OS or Background. The crops classified as background are then dropped and the remaining are evaluated. 
-							</div>
-							<div class="panel-body">
-							An attempt - To detect bounding boxes, we tried implementing sliding windows approach also. That is, we extracted windows of pre-determined sizes from the test image, then based on the score/probability obtained from the SVM we dropped background crops and proceeded with C.elegans and Human U2OS crops. Once the class specific boxes were collected, we ran non-maximum suppression to drop the overlapping boxes. Then metrics were computed.
-							</div>
-							<div class="panel-body">
-							Issue faced: The sliding windows approach was computationally expensive because of the large number of required windows. So we could not go ahead with this idea and instead opted for a more basic but effective connected components approach.
-							</div>
-                          </div>
-                           <div id="collapseOne" class="panel-collapse collapse in">
+							
+                          
                             <div class="panel-body">
 							<b>Detector performance:</b>
 							</div>
@@ -757,7 +817,7 @@
                           <div><img src="img/SVM/Figure29.png" alt="img"></div>
                           <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure29</h4>
                            <div>&nbsp;</div>
-                        </div>
+                        
                       </div>
                     </div>
                   </div>
@@ -779,7 +839,6 @@
               <BR>&nbsp;<BR> 
               <div class="heading">
                 <h2 class="wow fadeInLeftBig">Conclusions</h2>
-                <h4> Introduction: <a href="Bala_Claybon_Stuckner_Proposal.pdf">(Click to View Python Code)</a></h4>  </h2><p> The Cell Classifier project comprises of two approaches to solve the issue of classifying cells.</p>
               </div>
 
               <!-- START CONCLUSIONS CONTENT -->
@@ -790,13 +849,7 @@
                       <div class="panel-group" id="accordion">
                         <!-- START SINGLE FEATURED ITEM #1-->
                         <div class="panel panel-default wow fadeInLeft">
-                          <div class="panel-heading">
-                            <h4 class="panel-title">
-                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
-                                 </span> CONCLUSIONS </span>
-                              </a>
-                            </h4>
-                          </div>
+                         
                           
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -826,6 +879,45 @@
                             <div class="panel-body">
                              A drawback in our system could be the high dependence on illumination. This is because SIFT is not invariant to illumination changes. We counteracted this to some extent by pre-processing the input images. We would have tested with more datasets of same cell-types, however such highly specific demand in dataset procurement could not have been met.
                             </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>       
+      </div>
+    </section>
+	<!--=========== END CONCLUSIONS SECTION ================-->
+	<!--=========== BEGIN CONCLUSIONS SECTION ================-->
+    <section id="conclusion">
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-12 col-md-12">
+            <div class="about_area">
+              <!-- START CONCLUSIONS HEADING -->
+              <BR>&nbsp;<BR> 
+              <div class="heading">
+                <h2 class="wow fadeInLeftBig">Conclusions</h2>
+              </div>
+
+              <!-- START CONCLUSIONS CONTENT -->
+              <div class="about_content">
+                <div class="row">
+                  <div>
+                    <div class="about_featured">
+                      <div class="panel-group" id="accordion">
+                        <!-- START SINGLE FEATURED ITEM #1-->
+                        <div class="panel panel-default wow fadeInLeft">
+                         
+                          <div id="collapseOne" class="panel-collapse collapse in">
+                            <div class="panel-body">
+                             <b>qualitative results will go here</b>
+                            </div>
+                            
                           </div>
                         </div>
                       </div>
