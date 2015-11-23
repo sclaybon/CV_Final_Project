@@ -88,10 +88,11 @@
             <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#abstract">Abstract</a></li>
-              <li><a href="#approach1">Approach(1)</a></li>
-              <li><a href="#approach2">Approach(2)</a></li>
-              <li><a href="#approach3">Approach(3)</a></li>
+              <li><a href="#approach1">C Elegans Approach(1)</a></li>
+              <li><a href="#approach2">U2OS Approach(2)</a></li>
+              <li><a href="#approach3">Experiments and Results</a></li>
               <li><a href="#conclusion">Conclusions</a></li> 
+              <li><a href="#conclusion">Qualitative Results</a></li> 
               <li><a href="#team">Team</a></li>                           
             </ul>           
           </div><!--/.nav-collapse -->
@@ -323,58 +324,77 @@
                           </div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-                             The C-elegans nematode is a free living roundworm that was chosen for this project due to the availability of images and groundtruth as well as for its relation to cancer studies. The goal of this portion of the project was to correctly identify the position and number of these organisms in an image such as in Figure1. The output of the algorithm is an Nx4 matrix consisting of the x and y coordinates of the top left corners of each bounding box as well as the height and width of the box for use in testing accuracy using our groundtruth. The output is then [x,y,w,h]. The algorithm uses edge and external contour detection as its basis, but there were various attempts on the problem before edge detection was considered as a final solution. First, we used a clustering algorithm called K-means to analyze the image. Unfortunately, the organisms, due to the nature of the background, tended to blend into the page, moreso on some images than others such as in Figure 2.
+                             The C-elegans nematode is a free living roundworm that was chosen for this project due to the availability of images and groundtruth as well as for its relation to cancer studies. The goal of this portion of the project was to correctly identify the position and number of these organisms in an image such as in Figure1. The output of the algorithm is an Nx4 matrix consisting of the x and y coordinates of the top left corners of each bounding box as well as the height and width of the box for use in testing accuracy using our groundtruth. The output is then [x,y,w,h]. The algorithm uses edge and external contour detection as its basis, but there were various attempts on the problem before edge detection was considered as a final solution. 
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure1.png" alt="img"></div>
+                           <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure1</h4>
+                           <div>&nbsp;</div>
+                         
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             First, we used a clustering algorithm called K-means to analyze the image. Unfortunately, the organisms, due to the nature of the background, tended to blend into the page, moreso on some images than others such as in Figure 2.
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure2.png" alt="img"></div>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure2</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             From this we understood that this would not be a simple thresholding problem. We then thought to attempt background subtraction. Unfortunately, the background has a more than subtle shift between images, which means using a median based subtraction would not work. Due to this we thought to use a different type of background subtraction. Assuming one knows what the background looks like, it is possible to simply subtract the original image from the background. The question then becomes, where do we get the background image from. The idea was to blur the image enough that the background is still in tact while removing the organisms from the image. Then the equation is the original minus the background plus some intensity value. The result was less than satisfactory as shown in Figure 3, mainly due to the noise involved during the change in gradient within the image.
                             </div>
                           </div>
                           <div"><img src="img/Elegans/Figure3.png" alt="img"></div>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure3</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             Finally, edge detection was tested. It seemed to accurately remove the background while maintaining a sense of the cell. In computer vision, if a few pixels that represent the whole can be obtained, It is possible for an effective algorithm to be developed. As such, we continued with the process. Canny edge detection was used for our needs as shown in figure 4.
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure4.png" alt="img"></div>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure4</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                            The next problem was the removal of the only thing in the image outside of the organisms, the image border between the completely black area on the corners and the rest of the inner area. The answer to this problem required some backtracking. Thankfully, the dark corners were actually fairly black and thus easily separable from the rest of the image using some thresholding. From there, we used an 8 connected component algorithm to located the areas outside of the border, dilated them so that they would hang over the edge of the border line and replaced the area in the canny image with the dilated area, which was turned black to match the rest of the binary canny image. We then replaced a few rows and columns at the top, right, left, and bottom with black since the borders there were not removed during this process, which can be seen in Figure 5.
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure5a.png" alt="img"><img src="img/Elegans/Figure5b.png" alt="img"><img src="img/Elegans/Figure5c.png" alt="img"></div>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure5(a,b,c)</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                            The next step was to filter out the leftover noise that did not pertain to the cells in question. The assumption made was that if there was a collection of pixels under a certain amount, it would be considered noise. For this problem, we first used a closing morphology algorithm on the image which filled in most of the holes since the edge image was highly disconnected. From there, we used another connected components algorithm to identify all of the pixel clusters in the image greater than 10, iterated through them, and replaced the bounding box of each cluster under 400 pixels with a completely eroded version of the original. This process is shown in Figure 6.
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure6a.png" alt="img"><img src="img/Elegans/Figure6b.png" alt="img"><img src="img/Elegans/Figure6c.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure6(a,b,c)</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             Next, since the cells still weren’t completely connected, we had to come up with a solution other than a simple connected components algorithm to separate cells while making sure we didn’t break up individual cells. Dilation would work to fill in holes, but it would also connect cells that were not touching originally. The same issue comes up in using closing morphology. We thought to use snakes; however since deformable contours was deprecated in OpenCV for python, we did not want to chance making an ineffective algorithm. Thus we sought other solutions similar in nature. We had the thought to connect nearby external contours but thought that this might already be implemented online. It turns out that someone on the stack exchange had implemented this in response to another question. The algorithm detects all external contours, which means that it does not save any contours that are within contours. It then goes on to compare each contour’s point to all of the other points in the image, and if it is within a certain vicinity, then it adds it to a contour array. Finally, the OpenCV draw contours function is evoked for a visual as shown below in Figure 7.
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure7.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure7</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             The contours are used to determine Cell number and to compute the bounding boxes. For each contour, if there are at least 200 pixels within the canny image in that location, then we consider that 1 cell. If there are more than 350 pixels, then we divide the number of pixels in that contour area by 350 and round up. We use a mask of the contour area over the canny edge image to accomplish this process as shown in figure 8. 
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure8a.png" alt="img"><img src="img/Elegans/Figure8b.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure8(a,b)</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                            The bounding boxes are simply the top, left, bottom, and right-most locations on each contour. The final output is shown in Figure 9.
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure9.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure9</h4>
+                           <div>&nbsp;</div>
                         </div>
                       </div>
                     </div>
@@ -426,12 +446,16 @@
                             </div>
                           </div>
                           <div><img src="img/U2OS/Figure10.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure10</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             The first method that is used is a simple connected components blob detection method.  This was an obvious choice because it is easy to implement and most of the cells are separated by black.  The image was first smoothed using a Gaussian filter and then a simple intensity threshold was taken to remove the background.  A built in connected components function from the scipy ndimage library was used.  This method quickly and easily separated and returned each cell that was not connected to any other cells and any cells that were touching were returned together as one cell.  In figure 11(a) a low threshold was used to separate the cells from the background.  Because of the smoothing, cells that were touching or were close together were not separated.  Cells that were far from other cells were easily segmented.  In figure 11(b) a higher threshold was used.  All cells were successfully separated, but the threshold was too high and some cells were not even seen while almost all the cells lost their edges and their sizes were returned to be much smaller than they actually were.  No threshold was perfect and to solve this problem I used an iterative process.  I made several passes using the connected components algorithm using increasingly high thresholds.  I started with the threshold in 11(a) and ended with the threshold used in 11(b).  After the first pass, each box was treated as its own image and passed individually back through the function and thresholded with a higher value.  If the algorithm detected only 1 cell at the new threshold it did nothing and assumed that the previous pass was more accurate.  If it detected more than 1 cell it created new bounding boxes for each cell.  Figure 11(c) shows that this method successfully segmented all cells in the image without missing any or returning sizes that were too small.
                             </div>
                           </div>
                           <div><img src="img/U2OS/Figure11a.png" alt="img"><img src="img/U2OS/Figure11b.png" alt="img"><img src="img/U2OS/Figure11c.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure11(a,b,c))</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             The second method we employed was a circle detect method. Some images had cells that were touching or overlapping and the connected components method would never separate those cells.  The theory was that overlapping cells would vote in hough space for different ellipse centers and the cells could be segmented by that method.  Figure 12 shows some examples of the success and failures of the circle detection method.  Segmentations done by this method are yellow while segmentations done by other methods are in orange.  Figure 12(a) and (b) show two overlapping cells that could not be segmented with the connected components method but were successfully segmented with the circle detection method.  Figure 12(c) and (d) show a fairly successful example of the method in action on an entire image.  The method successfully separated groups of overlapping cells that could not be separated with the connected components method.  In the top left corner of 12(d) all the cells were successfully separated and the boxes were pretty tightly bound to the cells.  In the top right corner the cells were successfully separated, but the bounding box on the upper cell is a little large.  The center group was segmented reasonably well, but one cell was missed and the bounding boxes were a bit large on others.  The lower left group was poorly operated on.  Half of the cells were missed entirely in that group.  Overall, figure 12(d) shows a pretty successful application of the circle detection method.  The accuracy of the segmentation was superior when added to the connected components method shown in (c).  Figure 12(e) shows a failure case of the circle detection method.  The top left yellow boxes were improperly placed around an unusually shaped cell.  The yellow boxes just below that were placed around a cell with unfortunate intensity variations that the method detected as several ellipses.  The center yellow boxes were placed around a cell that had a slight notch in the center.  Each side of the notched ellipse voted for circles.
@@ -443,12 +467,16 @@
                             </div>
                           </div>
                           <div><img src="img/U2OS/Figure12a.png" alt="img"><img src="img/U2OS/Figure12b.png" alt="img"><img src="img/U2OS/Figure12c.png" alt="img"><img src="img/U2OS/Figure12d.png" alt="img"><img src="img/U2OS/Figure12e.png" alt="img"></div>
+                         <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure12(a,b,c,d,e)</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             Figure 13 (a) and (b) given an example of an input to this algorithm and its corresponding output.
                             </div>
                           </div>
                           <div><img src="img/U2OS/Figure13a.png" alt="img"><img src="img/U2OS/Figure13b.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure13(a,b)</h4>
+                           <div>&nbsp;</div>
                         </div>
                       </div>
                     </div>
@@ -470,7 +498,7 @@
               <!-- START APPROACH3 HEADING -->
               <BR>&nbsp;<BR> 
               <div class="heading">
-                <h2 class="wow fadeInLeftBig">Cell Classifier Approach</h2>
+                <h2 class="wow fadeInLeftBig">The Cell Classifier (Experiments and Results)</h2>
                 <h4> <b>Introduction:</b> <a href="Bala_Claybon_Stuckner_Proposal.pdf">(Click to View Python Code)</a></h4>  </h2><p> The Cell Classifier project comprises of two approaches to solve the issue of classifying cells.</p>
               </div>
 
@@ -505,6 +533,8 @@
                             </div>
                           </div>
                           <div><img src="img/SVM/Figure14.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure14</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                           
                             <div class="panel-body">
@@ -516,6 +546,8 @@
                            
                           
                           <div><img src="img/SVM/Figure15.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure15</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
 							For both the approaches, metrics like precision, accuracy, recall for classification and detection are evaluated. Also average cell count RMS error are computed.                            
@@ -567,24 +599,32 @@
                             </div>
                           </div>
                           <div><img src="img/SVM/Figure16.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure16</h4>
+                           <div>&nbsp;</div>
                          <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             Figure 17 displays the Human U2OS detector performance.
                             </div>
                          </div>
                          <div><img src="img/SVM/Figure17.png" alt="img"></div>
+                         <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure17</h4>
+                           <div>&nbsp;</div>
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             Figure 18 displays the average performance.
                             </div>
                          </div>
                          <div><img src="img/SVM/Figure18.png" alt="img"></div>
+                         <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure18</h4>
+                           <div>&nbsp;</div>
                            <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
 							Figure 19 is a chart displaying the precision, recall, f1-score(What is the f1 score), and support vector score of the classifier.                           
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure19.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure19</h4>
+                           <div>&nbsp;</div>
                          <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
 							Class 1 / C.elegans: RMS cell count error: 3.22672662398 cells			
@@ -605,18 +645,24 @@
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure20.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure20</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
 							Figure 21 displays the Human U2OS detector output after an image is correctly classified as Human U2OS			
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure21.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure21</h4>
+                           <div>&nbsp;</div>
                            <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
 							Figure 22a is an example of the final output after going through the C-Elegans detector algorithm. Figure 22b is an example of the final output after going through the Human U2OS detector algorithm.			
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure22a.png" alt="img"><img src="img/SVM/Figure22b.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure22(a,b))</h4>
+                           <div>&nbsp;</div>
                            <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
 							<b>Approach 2:</b>
@@ -646,12 +692,16 @@
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure23.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure23</h4>
+                           <div>&nbsp;</div>
                            <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
 							Figure 24 displays the results without classification.
 							</div>
                           </div>
-                          <div><img src="img/SVM/Figure23.png" alt="img"></div>
+                          <div><img src="img/SVM/Figure24.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure24</h4>
+                           <div>&nbsp;</div>
                            <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
 							<b>Classifier performance:</b>
@@ -661,12 +711,16 @@
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure25.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure25</h4>
+                           <div>&nbsp;</div>
                            <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
 							Figure 26 is a chart displaying the SVM performance on Human U2OS.
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure26.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure26</h4>
+                           <div>&nbsp;</div>
                            <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
 							<b>Cell count performance:</b>
@@ -682,18 +736,27 @@
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure27a.png" alt="img"><img src="img/SVM/Figure27b.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure27(a,b)</h4>
+                           <div>&nbsp;</div>
                            <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
 							Figures 28a and 28b display the final output of approach 2.
 							</div>
                           </div>
-                          <div><img src="img/SVM/Figure28a.png" alt="img"><img src="img/SVM/Figure28b.png" alt="img"></div>
+                          <div><img src="img/SVM/Figure28a.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure28a</h4>
+                           <div>&nbsp;</div>
+                           <div><img src="img/SVM/Figure28b.png" alt="img"></div>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure28b</h4>
+                           <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
 							Figure 29 displays a chart comparing the two approaches.
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure29.png" alt="img"></div>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure29</h4>
+                           <div>&nbsp;</div>
                         </div>
                       </div>
                     </div>
