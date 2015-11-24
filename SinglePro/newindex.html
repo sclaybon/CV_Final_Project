@@ -90,9 +90,10 @@
             <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
               <li class="active"><a href="#">Home</a></li>
               <li><a href="#abstract">Overview</a></li>
-              <li><a href="#approach1">C Elegans Detector [Approach1]</a></li>
-              <li><a href="#approach2">Human U2OS Detector [Approach1]</a></li>
-              <li><a href="#generic">Generic Detector [Approach2]</a></li>
+              <li><a href="#classifier">Classifier</a></li>
+              <li><a href="#approach1">C Elegans Detector</a></li>
+              <li><a href="#approach2">Human U2OS Detector</a></li>
+              <li><a href="#generic">Generic Detector</a></li>
               <li><a href="#approach3">Results</a></li>
               <li><a href="#conclusion">Conclusions</a></li> 
               <li><a href="#qualitative">Qualitative Results</a></li> 
@@ -282,11 +283,12 @@
                             <div class="panel-body">
                             The goal of the present project is to develop algorithms that when given a microscopy image containing biological cells, returns information about the cells including type, number, and size. Microscopy images and ground truths were received from the BBBC to aid in the development of the techniques used in this project.  Multiple techniques are employed to identify each individual cell in the image and return its metrics.  The success of the experiment is evaluated by comparing the results with the accepted ground truths provided with the datasets.  The hope of this endeavor is to aid in the development in microscopy image techniques that will speed up and make more accurate the information and metrics acquired from biological image datasets.
                             </div>
+                            <div class="heading">
+							<BR>&nbsp;<BR>
+							<h2 class="wow fadeInLeftBig">Data Sets</h2>
+							</div>
                             <div class="panel-body">
-                            <b>The Cell Classifier project comprises of two approaches to solve the issue of classifying cells.</b> 
-                            </div>
-                            <div class="panel-body">
-                            <b>For our dataset we made use of two types of cells:</b> 
+                            <b>The Cell Classifier project comprises of two approaches to solve the issue of classifying cells. For our dataset we made use of two types of cells: </b> 
                             </div>
                             <div class="panel-body">
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1. Roundworm C.elegans – Dead pheotype: worms appear rod-like in shape and slightly uneven in texture. Live phenotype: worms appear curved in shape and smooth in texture (Courtesy: https://www.broadinstitute.org/)
@@ -324,25 +326,40 @@
             </div>
             </div>
                  <!-- START Intro Area -->
-    <div class="container">
+    
+             
+     
+        <!-- END SKILLS  -->
+    </section>
+    <!--=========== END ABOUT SECTION ================-->
+    <!--=========== BEGIN Classifier SECTION ================-->
+    <section id="classifier">
+      <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12">
             <div class="about_area">
-              <!-- START ABOUT HEADING -->
+              <!-- START APPROACH1 HEADING -->
+              <BR>&nbsp;<BR> 
               <div class="heading">
-				<BR>&nbsp;<BR>
                 <h2 class="wow fadeInLeftBig">Classifier</h2>
               </div>
-                  <div class="about_content">
+
+              <!-- START APPROACH1 CONTENT -->
+              <div class="about_content">
                 <div class="row">
-                  
+                  <div>
                     <div class="about_featured">
                       <div class="panel-group" id="accordion">
-                        <!-- START SINGLE FEATURED ITEAM #1-->
+                        <!-- START SINGLE FEATURED ITEM #1-->
                         <div class="panel panel-default wow fadeInLeft">
-							<div id="collapseOne" class="panel-collapse collapse in">
-                            
-                            <div class="panel-body">
+                          <div class="panel-heading">
+                            <h4 class="panel-title">
+                              <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne">
+                                 </span> A brief overview of the classifier used </span>
+                              </a>
+                            </h4>
+                          </div>
+                          <div class="panel-body">
                             For both of the approaches, an SVM based classifier was used. In the first approach the SVM was used to train an image-level classifier. Here the positives were C.elegans images and the negatives were Human U2OS images. In the second approach, two SVMs were trained, one for each cell type. In this case the positives were cell crop patches, and the negatives were background patches. 
                             </div>
                             <div class="panel-body">
@@ -354,22 +371,18 @@
                             <div class="panel-body">
                             The cv2 modules like SIFT extractor, matcher, detector, BOWImgDescriptorExtractor were used for this purpose.
                             </div>
-                          </div>  
                         </div>
-                       </div>
                       </div>
-                    </div> 
-                   </div>  
-                 </div>
-                       </div>
-                      </div>
-                    </div> 
-                   </div> 
-             
-     
-        <!-- END SKILLS  -->
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>       
+      </div>
     </section>
-    <!--=========== END ABOUT SECTION ================-->
+	<!--=========== END Classifier SECTION ================-->
      <!--=========== BEGIN APPROACH1 SECTION ================-->
     <section id="approach1">
       <div class="container">
