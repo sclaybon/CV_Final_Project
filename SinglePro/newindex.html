@@ -215,7 +215,6 @@
 							</div>
                           </div>
                         </div>
-                       
                       </div>
                     </div>
                   </div>
@@ -360,7 +359,7 @@
                             </h4>
                           </div>
                           <div class="panel-body">
-                            For both of the approaches, an SVM based classifier was used. In the first approach the SVM was used to train an image-level classifier. Here the positives were C.elegans images and the negatives were Human U2OS images. In the second approach, two SVMs were trained, one for each cell type. In this case the positives were cell crop patches, and the negatives were background patches. 
+                            For both of the approaches, an SVM based classifier was used. In the first approach the SVM was used to train an image-level classifier. Here, the positives were C.elegans images, and the negatives were Human U2OS images. In the second approach, two SVMs were trained, one for each cell type. In this case, the positives were cell crop patches, and the negatives were background patches. 
                             </div>
                             <div class="panel-body">
                             The features extracted from the images/crops were SIFT or Scale-invariant feature transform descriptors. The Bag-of-Words model was used to create visual dictionaries using training descriptors. The vocabulary was created using K-means, where K is the number of clusters (number of words). For each training image/crop, a histogram (number of bins = words in vocabulary) of visual words was obtained. These were used to train the support vector machine (classifier) with an RBF (radial basis function) kernel.
@@ -429,7 +428,7 @@
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-                            From this we understood that this would not be a simple thresholding problem. We then thought to attempt background subtraction. Unfortunately, the background has a more than subtle shift between images, which means using a median based subtraction would not work. Due to this we thought to use a different type of background subtraction. Assuming one knows what the background looks like, it is possible to simply subtract the original image from the background. The question then becomes, where do we get the background image from. The idea was to blur the image enough that the background is still in tact while removing the organisms from the image. Then the equation is the original minus the background plus some intensity value. The result was less than satisfactory as shown in Figure 5, mainly due to the noise involved during the change in gradient within the image.
+                            From this we understood that this would not be a simple thresholding problem. We then thought to attempt background subtraction. Unfortunately, the background has a more than subtle shift between images, which means using a median based subtraction would not work. Due to this we thought to use a different type of background subtraction. Assuming one knows what the background looks like, it is possible to simply subtract the original image from the background. The question then becomes, where do we get the background image from. The idea was to blur the image enough that the background is still in tact while removing the organisms from the image. We used cv2.pyrmeanshift for this purpose. The equation is the original minus the background plus some intensity value. The result was less than satisfactory as shown in Figure 5, mainly due to the noise involved during the change in gradient within the image.
                             </div>
                           </div>
                          
