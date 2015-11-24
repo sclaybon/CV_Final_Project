@@ -189,7 +189,7 @@
               <!-- START ABOUT HEADING -->
               <div class="heading">
 				<BR>&nbsp;<BR>
-                <h2 class="wow fadeInLeftBig">The Cell Classifier</h2>
+                <h2 class="wow fadeInLeftBig">The Cell Profiler</h2>
                 <!--<div><b>The Overview section consists of the Abstract and the Introduction.</b></div>-->
                 <h4> <b>Abstract:</b> <a href="Bala_Claybon_Stuckner_Proposal.pdf"> (Click to View Original Proposal)</a></h4>  </h2><p> Identifying and counting cells in images is the first stage of cell analysis, but this step can become extraordinarily time consuming if done manually as the number of cells and organisms increase. Our goal was to take a micrograph, a magnified image containing cells taken through a microscope lens, and return information about cell type and number. For this, we implemented two models. In our first model, we trained a high level image classifier followed by class specific detection algorithms and finally evaluated the metrics. Our second approach involves a generic cell detector, followed by classification. We have compared the performance of both these models in terms of precision, recall and mean RMS cell-count error. We used two data-sets: C.elegans and Human Bone Osteosarcoma Epithelial Cells (U2OS Line), that provide ground truth segmentation of cells. </p>
 				</div>
@@ -415,7 +415,7 @@
                               </div>
                           </div>
                           <div><img src="img/Elegans/Figure1.png" alt="img"></div>
-                           <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure3: input image</h4>
+                           <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure3: Input image</h4>
                            <div>&nbsp;</div>
                          
                           <div id="collapseOne" class="panel-collapse collapse in">
@@ -424,7 +424,7 @@
                           </div>
                           </div>
                           <div><img src="img/Elegans/Figure2.png" alt="img"></div>
-                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure4: input image example where the C. Elegans blend into the background </h4>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure4: Input image example where the C. Elegans blend into the background </h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -433,7 +433,7 @@
                           </div>
                          
                           <div><img src="img/Elegans/Figure3.png" alt="img"></div>
-                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure5: background subtracted image</h4>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure5: Background subtracted image</h4>
                            <div>&nbsp;</div>
                           
                           <div id="collapseOne" class="panel-collapse collapse in">
@@ -442,7 +442,7 @@
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure4.png" alt="img"></div>
-                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure6: image processed using canny edge detection</h4>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure6: Image processed using canny edge detection</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -450,7 +450,7 @@
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure5a.png" alt="img"><img src="img/Elegans/Figure5b.png" alt="img"><img src="img/Elegans/Figure5c.png" alt="img"></div>
-                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure7(a,b,c): showing the process of removing the borders</h4>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure7(a,b,c): Showing the process of removing the borders</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -458,7 +458,7 @@
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure6a.png" alt="img"><img src="img/Elegans/Figure6b.png" alt="img"><img src="img/Elegans/Figure6c.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure8(a,b,c): showing the results of filtering the small components out of the image</h4>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure8(a,b,c): Showing the results of filtering the small components out of the image</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -466,7 +466,7 @@
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure7.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure9: the results of using the external contour connection based on distance method</h4>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure9: The results of using the external contour connection based on distance method</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -474,7 +474,7 @@
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure8a.png" alt="img"><img src="img/Elegans/Figure8b.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure10(a,b): showing the process and result of masking for counting pixels for cell number estimation</h4>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure10(a,b): Showing the process and result of masking for counting pixels for cell number estimation</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -482,7 +482,7 @@
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure9.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure11: the final result with bounding boxes</h4>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure11: The final result with bounding boxes</h4>
                            <div>&nbsp;</div>
                         </div>
                       </div>
@@ -682,7 +682,7 @@
                             &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;A. Detector performance
                             </div>
                             <div class="panel-body">
-                            Figure 16 displays the C.elegans detector performance.
+                            Figure 16 Displays the C.elegans detector performance.
                             </div>
                           </div>
                           <div><img src="img/SVM/Figure16.png" alt="img"></div>
@@ -690,7 +690,7 @@
                            <div>&nbsp;</div>
                          <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-                            Figure 17 displays the Human U2OS detector performance.
+                            Figure 17 Displays the Human U2OS detector performance.
                             </div>
                          </div>
                          <div><img src="img/SVM/Figure17.png" alt="img"></div>
@@ -698,7 +698,7 @@
                            <div>&nbsp;</div>
                         <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-                            Figure 18 displays the average performance.
+                            Figure 18 Displays the average performance.
                             </div>
                          </div>
                          <div><img src="img/SVM/Figure18.png" alt="img"></div>
@@ -706,7 +706,7 @@
                            <div>&nbsp;</div>
                            <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-							Figure 19 is a chart displaying the precision, recall, f1-score(What is the f1 score), and support vector score of the classifier.                           
+							Figure 19 A chart displaying the precision, recall, f1-score, and support vector score of the classifier.                           
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure19.png" alt="img"></div>
@@ -728,7 +728,7 @@
 							<b>Some example result images:</b>			
 							</div>
 							<div class="panel-body">
-							Figure 20 displays the C.elegans detector output after an image is correctly classified as C.elegans		
+							Figure 20 Displays the C.elegans detector output after an image is correctly classified as C.elegans		
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure20.png" alt="img"></div>
@@ -736,7 +736,7 @@
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-							Figure 21 displays the Human U2OS detector output after an image is correctly classified as Human U2OS			
+							Figure 21 Displays the Human U2OS detector output after an image is correctly classified as Human U2OS			
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure21.png" alt="img"></div>
@@ -744,7 +744,7 @@
                            <div>&nbsp;</div>
                            <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-							Figure 22a is an example of the final output after going through the C-Elegans detector algorithm. Figure 22b is an example of the final output after going through the Human U2OS detector algorithm.			
+							Figure 22a An example of the final output after going through the C-Elegans detector algorithm. Figure 22b is an example of the final output after going through the Human U2OS detector algorithm.			
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure22a.png" alt="img"><img src="img/SVM/Figure22b.png" alt="img"></div>
@@ -760,7 +760,7 @@
 							<b>Detector performance:</b>
 							</div>
 							<div class="panel-body">
-							Figure 23 displays the results with classification.
+							Figure 23 Displays the results with classification.
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure23.png" alt="img"></div>
@@ -768,7 +768,7 @@
                            <div>&nbsp;</div>
                            <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-							Figure 24 displays the results without classification.
+							Figure 24 Displays the results without classification.
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure24.png" alt="img"></div>
@@ -779,7 +779,7 @@
 							<b>Classifier performance:</b>
 							</div>
 							<div class="panel-body">
-							Figure 25 is a chart displaying the SVM performance on C. Elegans.
+							Figure 25 A chart displaying the SVM performance on C. Elegans.
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure25.png" alt="img"></div>
@@ -787,7 +787,7 @@
                            <div>&nbsp;</div>
                            <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-							Figure 26 is a chart displaying the SVM performance on Human U2OS.
+							Figure 26 A chart displaying the SVM performance on Human U2OS.
 							</div>
                           </div>
                           <div><img src="img/SVM/Figure26.png" alt="img"></div>
