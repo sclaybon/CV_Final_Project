@@ -301,7 +301,7 @@
                             </div>
                           </div>
                           <div><img src="img/SVM/Figure14.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure1</h4>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure1: Approach 1</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -309,7 +309,7 @@
                             </div>
                           </div>  
                           <div><img src="img/SVM/Figure15.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure2</h4>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure2: Approach 2</h4>
                            <div>&nbsp;</div>
                            
                  </div>
@@ -366,7 +366,7 @@
                             The features extracted from the images/crops were SIFT or Scale-invariant feature transform descriptors. The Bag-of-Words model was used to create visual dictionaries using training descriptors. The vocabulary was created using K-means, where K is the number of clusters (number of words). For each training image/crop, a histogram (number of bins = words in vocabulary) of visual words was obtained. These were used to train the support vector machine (classifier) with an RBF (radial basis function) kernel.
                             </div>
                             <div class="panel-body">
-                            During the testing phase, SIFT features are extracted from the given image patch. The descriptors are assigned to nearest the nearest visual word in the dictionary and the histogram of words is computed. This is given to the SVM which classifies the given patch/image as a positive or negative class.
+                            During the testing phase, SIFT features are extracted from the given image patch. The descriptors are assigned to the nearest visual word in the dictionary and the histogram of words is computed. This is given to the SVM which classifies the given patch/image as a positive or negative class.
                             </div>
                             <div class="panel-body">
                             The cv2 modules like SIFT extractor, matcher, detector, BOWImgDescriptorExtractor were used for this purpose.
@@ -416,7 +416,7 @@
                               </div>
                           </div>
                           <div><img src="img/Elegans/Figure1.png" alt="img"></div>
-                           <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure3</h4>
+                           <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure3: input image</h4>
                            <div>&nbsp;</div>
                          
                           <div id="collapseOne" class="panel-collapse collapse in">
@@ -425,7 +425,7 @@
                           </div>
                           </div>
                           <div><img src="img/Elegans/Figure2.png" alt="img"></div>
-                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure4</h4>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure4: input image example where the C. Elegans blend into the background </h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -433,7 +433,7 @@
                             </div>
                           </div>
                           <div"><img src="img/Elegans/Figure3.png" alt="img"></div>
-                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure5</h4>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure5: background subtracted image</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -441,7 +441,7 @@
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure4.png" alt="img"></div>
-                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure6</h4>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure6: image processed using canny edge detection</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -449,7 +449,7 @@
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure5a.png" alt="img"><img src="img/Elegans/Figure5b.png" alt="img"><img src="img/Elegans/Figure5c.png" alt="img"></div>
-                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure7(a,b,c)</h4>
+                             <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure7(a,b,c): showing the process of removing the borders</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -457,7 +457,7 @@
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure6a.png" alt="img"><img src="img/Elegans/Figure6b.png" alt="img"><img src="img/Elegans/Figure6c.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure8(a,b,c)</h4>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure8(a,b,c): showing the results of filtering the small components out of the image</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -465,7 +465,7 @@
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure7.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure9</h4>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure9: the results of using the external contour connection based on distance method</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -473,7 +473,7 @@
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure8a.png" alt="img"><img src="img/Elegans/Figure8b.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure10(a,b)</h4>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure10(a,b): showing the process and result of masking for counting pixels for cell number estimation</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -481,7 +481,7 @@
                             </div>
                           </div>
                           <div><img src="img/Elegans/Figure9.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure11</h4>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure11: the final result with bounding boxes</h4>
                            <div>&nbsp;</div>
                         </div>
                       </div>
