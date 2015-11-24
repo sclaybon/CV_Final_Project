@@ -432,6 +432,7 @@
                             From this we understood that this would not be a simple thresholding problem. We then thought to attempt background subtraction. Unfortunately, the background has a more than subtle shift between images, which means using a median based subtraction would not work. Due to this we thought to use a different type of background subtraction. Assuming one knows what the background looks like, it is possible to simply subtract the original image from the background. The question then becomes, where do we get the background image from. The idea was to blur the image enough that the background is still in tact while removing the organisms from the image. Then the equation is the original minus the background plus some intensity value. The result was less than satisfactory as shown in Figure 5, mainly due to the noise involved during the change in gradient within the image.
                             </div>
                           </div>
+                         
                           <div><img src="img/Elegans/Figure3.png" alt="img"></div>
                              <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure5: background subtracted image</h4>
                            <div>&nbsp;</div>
