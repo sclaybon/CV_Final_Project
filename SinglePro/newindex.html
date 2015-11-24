@@ -412,7 +412,7 @@
                           </div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-							The C-elegans nematode is a free living roundworm that was chosen for this project due to the availability of images and groundtruth as well as for its relation to cancer studies. The goal of this portion of the project was to correctly identify the position and number of these organisms in an image such as in Figure5. The output of the algorithm is an Nx4 matrix consisting of the x and y coordinates of the top left corners of each bounding box as well as the height and width of the box for use in testing accuracy using our groundtruth. The output is then [x,y,w,h]. The algorithm uses edge and external contour detection as its basis, but there were various attempts on the problem before edge detection was considered as a final solution.
+							The C-elegans nematode is a free living roundworm that was chosen for this project due to the availability of images and groundtruth as well as for its relation to cancer studies. The goal of this portion of the project was to correctly identify the position and number of these organisms in an image such as in Figure 3. The output of the algorithm is an Nx4 matrix consisting of the x and y coordinates of the top left corners of each bounding box as well as the height and width of the box for use in testing accuracy using our groundtruth. The output is then [x,y,w,h]. The algorithm uses edge and external contour detection as its basis, but there were various attempts on the problem before edge detection was considered as a final solution.
                               </div>
                           </div>
                           <div><img src="img/Elegans/Figure1.png" alt="img"></div>
@@ -432,9 +432,10 @@
                             From this we understood that this would not be a simple thresholding problem. We then thought to attempt background subtraction. Unfortunately, the background has a more than subtle shift between images, which means using a median based subtraction would not work. Due to this we thought to use a different type of background subtraction. Assuming one knows what the background looks like, it is possible to simply subtract the original image from the background. The question then becomes, where do we get the background image from. The idea was to blur the image enough that the background is still in tact while removing the organisms from the image. Then the equation is the original minus the background plus some intensity value. The result was less than satisfactory as shown in Figure 5, mainly due to the noise involved during the change in gradient within the image.
                             </div>
                           </div>
-                          <div"><img src="img/Elegans/Figure3.png" alt="img"></div>
+                          <div><img src="img/Elegans/Figure3.png" alt="img"></div>
                              <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure5: background subtracted image</h4>
                            <div>&nbsp;</div>
+                          
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             Finally, edge detection was tested. It seemed to accurately remove the background while maintaining a sense of the cell. In computer vision, if a few pixels that represent the whole can be obtained, It is possible for an effective algorithm to be developed. As such, we continued with the process. Canny edge detection was used for our needs as shown in figure 6.
@@ -533,7 +534,7 @@
                             </div>
                           </div>
                           <div><img src="img/U2OS/Figure10.png" alt="img"></div>
-                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure12</h4>
+                          <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure12: Microscopic image of U2OS cancer cells.</h4>
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
@@ -560,7 +561,7 @@
                            <div>&nbsp;</div>
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
-                            Figure 15 (a) and (b) given an example of an input to this algorithm and its corresponding output.
+                            Figure 15 (a) and (b)  Example input and output of final algorithm to segment U2OS cells.
                             </div>
                           </div>
                           <div><img src="img/U2OS/Figure13a.png" alt="img"><img src="img/U2OS/Figure13b.png" alt="img"></div>
