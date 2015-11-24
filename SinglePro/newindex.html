@@ -89,7 +89,7 @@
           <div id="navbar" class="navbar-collapse collapse">
             <ul id="top-menu" class="nav navbar-nav navbar-right main_nav">
               <li class="active"><a href="#">Home</a></li>
-              <li><a href="#abstract">Abstract/Intro</a></li>
+              <li><a href="#abstract">Overview</a></li>
               <li><a href="#approach1">C Elegans Detector [Approach1]</a></li>
               <li><a href="#approach2">Human U2OS Detector [Approach1]</a></li>
               <li><a href="#generic">Generic Detector [Approach2]</a></li>
@@ -115,7 +115,7 @@
               <!-- FIRST SLIDE OVERLAY -->
               <div class="slider_overlay"></div> 
               <!-- FIRST SLIDE MAIN IMAGE -->
-              <img src="img/black.jpg" alt="img">
+              <img src="img/full-slider/image1.jpg" alt="img">
               <!-- FIRST SLIDE CAPTION-->
               <div class="slider_caption">
                 <h2>Health Care Technology</h2>
@@ -129,7 +129,7 @@
               <!-- SECOND SLIDE OVERLAY -->
               <div class="slider_overlay"></div> 
               <!-- SECOND SLIDE MAIN IMAGE -->
-              <img src="img/black.jpg" alt="img">
+              <img src="img/full-slider/image2.jpg" alt="img">
               <!-- SECOND SLIDE CAPTION-->
               <div class="slider_caption">
                 <h2>Segmentation and Image Processing</h2>
@@ -143,7 +143,7 @@
               <!-- THIRD SLIDE OVERLAY -->
               <div class="slider_overlay"></div> 
               <!-- THIRD SLIDE MAIN IMAGE -->
-              <img src="img/black.jpg" alt="img">
+              <img src="img/full-slider/image3.jpg" alt="img">
               <!-- THIRD SLIDE CAPTION-->
               <div class="slider_caption">
                 <h2>Machine Learning</h2>
@@ -189,8 +189,9 @@
               <div class="heading">
 				<BR>&nbsp;<BR>
                 <h2 class="wow fadeInLeftBig">The Cell Classifier</h2>
+                <div><b>The Overview section consists of the Abstract, the Introduction, and a short section about the Classifiers</b></div>
                 <h4> <b>Abstract:</b> <a href="Bala_Claybon_Stuckner_Proposal.pdf"> (Click to View Original Proposal)</a></h4>  </h2><p> Identifying and counting cells in images is the first stage of cell analysis, but this step can become extraordinarily time consuming if done manually as the number of cells and organisms increase. Our goal was to take a micrograph, a magnified image containing cells taken through a microscope lens, and return information about cell type and number. For this we implemented two models. In our first model we trained a high level image classifier followed by class specific detection algorithms and finally evaluated the metrics. Our second approach involves a generic cell detector, followed by classification. We have compared the performance of both these models in terms of precision, recall and mean RMS cell-count error. We used two data-sets: C.elegans and Human Bone Osteosarcoma Epithelial Cells (U2OS Line), that provide ground truth segmentation of cells. </p>
-			</div>
+				</div>
 
               <!-- START ABOUT CONTENT -->
               <div class="about_content">
@@ -261,8 +262,16 @@
 				<BR>&nbsp;<BR>
                 <h2 class="wow fadeInLeftBig">Introduction</h2>
               </div>
-                 <div id="collapseOne" class="panel-collapse collapse in">
-                   <div id="collapseOne" class="panel-collapse collapse in">
+                  <div class="about_content">
+                <div class="row">
+                  
+                    <div class="about_featured">
+                      <div class="panel-group" id="accordion">
+                        <!-- START SINGLE FEATURED ITEAM #1-->
+                        <div class="panel panel-default wow fadeInLeft">
+                 
+							<div id="collapseOne" class="panel-collapse collapse in">
+                   
                    
 							<div class="panel-body">
 							Analyzing microscopy images of biological cells and tissue is a time consuming and expensive task that requires expert human analysis.  There is a growing need for the development of image analysis techniques to make this process faster, more affordable, and more available.  There are two big motivations for the development of this technique: providing quick analysis of potentially infected samples in regions where experts may not be available or demand is too high, and streamlining data acquisition in research.  Testing samples for infectious cells such as tuberculosis or cancer can be time consuming and can require experts to analyze microscopic images.  An automatic image analysis of micrographs can bring disease detection and analysis to areas that do not have access to experts who can analyze the images.  This would also allow many more tests to be performed in a much quicker time and cut down on costs by not requiring time from experts.  Researchers can benefit from microscopy image analysis by cutting down the time it takes to analyze large datasets.  Image analysis can quickly return significant information about a sample or dataset such as type of cell, average size, shape, and other metrics and statistical information.  This data can be analyzed by researchers and does not require painstaking human measurements and analysis of each image which can be biased or affected by researcher fatigue.
@@ -300,54 +309,64 @@
                           <div><img src="img/SVM/Figure15.png" alt="img"></div>
                           <h4>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Figure2</h4>
                            <div>&nbsp;</div>
+                           
                  </div>
                 </div>
                </div>
               </div>
              </div>
-       <!-- BEGAIN SKILLS  -->
+                     
+                 </div>
+                </div>
+               </div>
+              </div>
+             </div>
+            </div>
+            </div>
+                 <!-- START Intro Area -->
+    <div class="container">
         <div class="row">
           <div class="col-lg-12 col-md-12">
-            <div class="skills_area">
-              <div class="slider_overlay"></div>
-              <div class="container">               
-                <div class="skills">
-                 <div class="heading">
-                    <h3 class="wow fadeInDown">Our Skills</h3>               
-                  </div>
-                  <!-- START SINGLE SKILL-->
-                  <div class="col-lg-3 col-md-3 col-sm-3">
-                   <div class="single_skill wow fadeInUp">
-                     <div id="myStat" data-dimension="150" data-text="85%" data-info="" data-width="10" data-fontsize="25" data-percent="85" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
-                      <h4>Python</h4>                      
-                    </div>
-                  </div>
-                  <!-- START SINGLE SKILL-->
-                  <div class="col-lg-3 col-md-3 col-sm-3">
-                    <div class="single_skill wow fadeInUp">
-                      <div id="myStathalf2" data-dimension="150" data-text="90%" data-info="" data-width="10" data-fontsize="25" data-percent="90" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
-                      <h4>Computer Vision</h4>
-                    </div>
-                  </div>
-                  <!-- START SINGLE SKILL-->
-                  <div class="col-lg-3 col-md-3 col-sm-3">                 
-                    <div class="single_skill wow fadeInUp">
-                      <div id="myStat2" data-dimension="150" data-text="65%" data-info="" data-width="10" data-fontsize="25" data-percent="65" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
-                      <h4>HTML/CSS</h4>
-                    </div>
-                  </div>
-                  <!-- START SINGLE SKILL-->
-                  <div class="col-lg-3 col-md-3 col-sm-3">                 
-                    <div class="single_skill wow fadeInUp">
-                      <div id="myStat3" data-dimension="150" data-text="75%" data-info="" data-width="10" data-fontsize="25" data-percent="75" data-fgcolor="#999" data-bgcolor="#fff"  data-icon="fa-task"></div>
-                      <h4>Design</h4>
-                    </div>
-                  </div>
-                </div>
+            <div class="about_area">
+              <!-- START ABOUT HEADING -->
+              <div class="heading">
+				<BR>&nbsp;<BR>
+                <h2 class="wow fadeInLeftBig">Classifier</h2>
               </div>
-            </div>
-          </div>
-        </div>
+                  <div class="about_content">
+                <div class="row">
+                  
+                    <div class="about_featured">
+                      <div class="panel-group" id="accordion">
+                        <!-- START SINGLE FEATURED ITEAM #1-->
+                        <div class="panel panel-default wow fadeInLeft">
+							<div id="collapseOne" class="panel-collapse collapse in">
+                            
+                            <div class="panel-body">
+                            For both of the approaches, an SVM based classifier was used. In the first approach the SVM was used to train an image-level classifier. Here the positives were C.elegans images and the negatives were Human U2OS images. In the second approach, two SVMs were trained, one for each cell type. In this case the positives were cell crop patches, and the negatives were background patches. 
+                            </div>
+                            <div class="panel-body">
+                            The features extracted from the images/crops were SIFT or Scale-invariant feature transform descriptors. The Bag-of-Words model was used to create visual dictionaries using training descriptors. The vocabulary was created using K-means, where K is the number of clusters (number of words). For each training image/crop, a histogram (number of bins = words in vocabulary) of visual words was obtained. These were used to train the support vector machine (classifier) with an RBF (radial basis function) kernel.
+                            </div>
+                            <div class="panel-body">
+                            During the testing phase, SIFT features are extracted from the given image patch. The descriptors are assigned to nearest the nearest visual word in the dictionary and the histogram of words is computed. This is given to the SVM which classifies the given patch/image as a positive or negative class.
+                            </div>
+                            <div class="panel-body">
+                            The cv2 modules like SIFT extractor, matcher, detector, BOWImgDescriptorExtractor were used for this purpose.
+                            </div>
+                          </div>  
+                        </div>
+                       </div>
+                      </div>
+                    </div> 
+                   </div>  
+                 </div>
+                       </div>
+                      </div>
+                    </div> 
+                   </div> 
+             
+     
         <!-- END SKILLS  -->
     </section>
     <!--=========== END ABOUT SECTION ================-->
@@ -629,23 +648,7 @@
                           </div>
                           
                           
-                          <div id="collapseOne" class="panel-collapse collapse in">
-                            <div class="panel-body">
-                            <b>Classifier:</b>
-                            </div>
-                            <div class="panel-body">
-                            For both the approaches, an SVM based classifier was used. In the first approach the SVM was used to train an image-level classifier. Here the positives were C.elegans images and the negatives were Human U2OS images. In the second approach, two SVMs were trained, one for each cell type. In this case the positives were cell crop patches, and the negatives were background patches. 
-                            </div>
-                            <div class="panel-body">
-                            The features extracted from the images/crops were SIFT or Scale-invariant feature transform descriptors. The Bag-of-Words model was used to create visual dictionaries using training descriptors. The vocabulary was created using K-means, where K is the number of clusters (number of words). For each training image/crop, a histogram (number of bins = words in vocabulary) of visual words was obtained. These were used to train the support vector machine (classifier) with an RBF (radial basis function) kernel.
-                            </div>
-                            <div class="panel-body">
-                            During the testing phase, SIFT features are extracted from the given image patch. The descriptors are assigned to nearest the nearest visual word in the dictionary and the histogram of words is computed. This is given to the SVM which classifies the given patch/image as a positive or negative class.
-                            </div>
-                            <div class="panel-body">
-                            The cv2 modules like SIFT extractor, matcher, detector, BOWImgDescriptorExtractor were used for this purpose.
-                            </div>
-                          </div>
+                         
                           <div id="collapseOne" class="panel-collapse collapse in">
                             <div class="panel-body">
                             <b>Results and Experiments:</b>
@@ -875,7 +878,7 @@
                              Dataset-based detector modules can be useful too as seen in the case of the Human U2OS detector in approach 1 which gave a precision and recall of approximately 0.9020 and 0.8187 respectively. Also the mean RMS error in cell counting was lower in approach 1, due to the high specificity and tuning of the algorithms.
                             </div>
                             <div class="panel-body">
-                             Approach 2 indicated that classification helped in pruning a lot of false positives from the detector module, giving a 51.74% improvement in mean precision value (increasing it from 0.46 to 0.698). The recall dropped though, however this was intuitive. 
+                             Approach 2 indicated that classification helped in pruning a lot of false positives from the detector module, giving a 51.74% improvement in mean precision value (increasing it from 0.46 to 0.698). The recall dropped; however, this was intuitive. 
                             </div>
                             <div class="panel-body">
                              A drawback in our system could be the high dependence on illumination. This is because SIFT is not invariant to illumination changes. We counteracted this to some extent by pre-processing the input images. We would have tested with more datasets of same cell-types, however such highly specific demand in dataset procurement could not have been met.
